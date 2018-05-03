@@ -1,0 +1,12 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:application name="${dubbo.application.name}" owner="${dubbo.application.owner}"/>
+    <!--向 zookeeper 订阅 provider 的地址，由 zookeeper 定时推送-->
+    <dubbo:registry protocol="zookeeper" address="localhost:2182,localhost:2183,localhost:2184"/>
+    <!--使用 dubbo 协议调用定义好的 api.PermissionService 接口-->
+    <dubbo:reference id="textTransform" interface="com.sf.gxl.dubbo.service.TextTransform"/>
+</beans>
