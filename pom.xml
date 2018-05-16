@@ -14,6 +14,7 @@
 		<zkclient_version>0.10</zkclient_version>
 		<!-- Test libs -->
 		<junit_version>4.12</junit_version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<modules>
@@ -78,6 +79,17 @@
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>2.6</version>
                 </plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.3</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
             </plugins>
         </pluginManagement>
     </build>

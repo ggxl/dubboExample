@@ -12,6 +12,6 @@ public class DemoCallService {
 
 		TextTransform textTransform = context.getBean(TextTransform.class);
 		String result = textTransform.transform2Upper("hello dubbo!!");
-		System.out.println("调用服务,返回结果:" + result);
+		System.out.println("璋冪敤鏈嶅姟,杩斿洖缁撴灉:" + result);
 	}
 }
